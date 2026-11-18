@@ -157,7 +157,7 @@
   .nav-cta:hover{background:var(--blue-hover);}
   .btn{display:inline-block; font-size:17px; padding:12px 24px; border-radius:980px; background:var(--blue); color:#fff; transition:background .2s;}
   .btn:hover{background:var(--blue-hover);}
-  .stats{max-width:1024px; margin:0 auto; padding:0 22px 110px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px;}
+  .stats{max-width:1024px; margin:0 auto; padding:0 22px 12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px;}
   .stat{background:var(--card); border-radius:20px; padding:26px 22px; text-align:center;}
   .stat .n{font-size:34px; font-weight:600; letter-spacing:-0.03em;}
   .stat .l{font-size:13px; color:var(--sec); margin-top:6px; line-height:1.4;}
@@ -184,7 +184,13 @@
   .photo-row:not(:has(.photo-slot)){display:none;}
   .note{font-size:12px; color:var(--sec); max-width:760px; margin:18px auto 0; text-align:center; line-height:1.5;}
   .feature.dark .note{color:var(--sec-dark);}
-  @media (max-width:734px){ .stats{padding-bottom:70px;} }
+  .kw{max-width:1024px; margin:0 auto; padding:0 22px 110px;}
+  .kw-in{background:var(--card); border-radius:20px; padding:10px 28px;}
+  .kw-row{display:grid; grid-template-columns:150px 1fr; gap:6px 20px; padding:14px 0; border-bottom:1px solid rgba(0,0,0,0.08); align-items:baseline;}
+  .kw-row:last-child{border-bottom:0;}
+  .kw-row b{font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--sec);}
+  .kw-row span{font-size:15px; line-height:1.7; color:var(--text);}
+  @media (max-width:734px){ .kw{padding-bottom:70px;} .kw-row{grid-template-columns:1fr;} .kw-in{padding:6px 20px;} }
 
 
   /* ---------------- ADDITIONS v5 ---------------- */
@@ -460,6 +466,13 @@
   <div class="stat"><div class="n">4-layer</div><div class="l">ESP32-S3 wearable with a 50 &Omega; RF trace, in Altium Designer</div></div>
   <div class="stat"><div class="n">0.8 mm</div><div class="l">Plotter error, down from 2.1 mm over 25 logged runs</div></div>
 </div>
+<div class="kw reveal"><div class="kw-in">
+  <div class="kw-row"><b>PCB design</b><span>KiCad &middot; Altium Designer &middot; 4-layer stack-up &middot; controlled impedance &middot; hierarchical schematics &middot; custom footprints &middot; JLCPCB fabrication and assembly</span></div>
+  <div class="kw-row"><b>Power</b><span>Buck and boost converters &middot; gate drive and dead-time &middot; isolated drivers &middot; current sensing &middot; battery pack sizing &middot; charging and protection circuits</span></div>
+  <div class="kw-row"><b>Controllers</b><span>ESP32-S3 &middot; STM32 &middot; Teensy 4.1 &middot; Raspberry Pi CM4</span></div>
+  <div class="kw-row"><b>Interfaces</b><span>I&sup2;C &middot; SPI &middot; UART &middot; SENT &middot; 4&ndash;20 mA &middot; 0&ndash;5 V</span></div>
+  <div class="kw-row"><b>Tools</b><span>LTspice &middot; MATLAB &middot; Python &middot; oscilloscope and DMM</span></div>
+</div></div>
 
 <!-- ================= OVERVIEW GRID ================= -->
 <section class="dark" id="work">
@@ -505,7 +518,7 @@
       <a class="card" href="#gameboy">
         <div class="card-visual"><svg viewBox="0 0 100 70" width="90"><rect x="10" y="15" width="35" height="24" rx="3" fill="none" stroke="#2997ff" stroke-width="1.4"/><rect x="55" y="15" width="35" height="24" rx="3" fill="none" stroke="#2997ff" stroke-width="1.4"/><path d="M45,27 H55" stroke="#2997ff"/><circle cx="27" cy="50" r="2" fill="#2997ff"/><circle cx="72" cy="50" r="2" fill="#2997ff"/></svg></div>
         <h3>Handheld Console</h3>
-        <p class="spec">Multi-stage DC-DC power system, battery management, custom KiCad libraries.</p>
+        <p class="spec">Multi-stage DC-DC power system, battery charging and protection, custom KiCad libraries.</p>
         <span class="status progress"><span class="dot"></span>In Progress</span>
       </a>
       <a class="card" href="#dpt">
@@ -1075,7 +1088,7 @@
     <h2 class="headline">What I can do for your team.</h2>
     <p class="subhead on-dark">Each skill links to the project where I used it.</p>
   </div>
-  <div class="skills reveal"><div class="skill"><h3>PCB design</h3><p class="tools">KiCad &middot; Altium Designer &middot; 4-layer stack-up &middot; controlled-impedance RF trace &middot; net classes and ground pours &middot; custom symbols and footprints &middot; JLCPCB fabrication and assembly</p><div class="shown">Shown in: <a href="#smartband">Wearable band</a> &middot; <a href="#minirover">Mini rover</a> &middot; <a href="#erc">ERC rover</a> &middot; <a href="#esp32">ESP32</a></div></div><div class="skill"><h3>Power electronics</h3><p class="tools">Buck, boost and LDO selection &middot; battery charging and protection &middot; gate drive and dead-time &middot; gate-drive supply sizing &middot; current sensing &middot; battery pack sizing &middot; efficiency and thermal budgeting</p><div class="shown">Shown in: <a href="#bldc">BLDC</a> &middot; <a href="#minirover">Mini rover</a> &middot; <a href="#gameboy">Handheld</a> &middot; <a href="#erc">ERC rover</a></div></div><div class="skill"><h3>Simulation and analysis</h3><p class="tools">LTspice &middot; MATLAB &middot; Python &middot; double-pulse switching-loss test &middot; measurement data evaluation</p><div class="shown">Shown in: <a href="#dpt">Double pulse test</a> &middot; <a href="#esp32">ESP32</a></div></div><div class="skill"><h3>Embedded firmware</h3><p class="tools">C and C++ &middot; ESP32, STM32, Teensy &middot; I2C, SPI, UART &middot; PWM motor control &middot; state machines and interrupts</p><div class="shown">Shown in: <a href="#esp32">ESP32</a> &middot; <a href="#thesis">Thesis</a> &middot; <a href="#erc">ERC rover</a></div></div><div class="skill"><h3>Lab and validation</h3><p class="tools">Oscilloscope and DMM &middot; structured test protocols &middot; board bring-up and fault tracing &middot; written test procedures</p><div class="shown">Shown in: <a href="#esp32">ESP32</a> &middot; <a href="#erc">ERC rover</a></div></div><div class="skill"><h3>Working style</h3><p class="tools">Reads the datasheet first &middot; documents decisions and mistakes &middot; works with mechanical and software teams &middot; writes clear English test records</p><div class="shown">Shown in: <a href="#thesis">Thesis</a> &middot; <a href="#gameboy">Handheld</a></div></div></div>
+  <div class="skills reveal"><div class="skill"><h3>PCB design</h3><p class="tools">KiCad &middot; Altium Designer &middot; 4-layer stack-up &middot; controlled-impedance RF trace &middot; net classes and ground pours &middot; custom symbols and footprints &middot; JLCPCB fabrication and assembly</p><div class="shown">Shown in: <a href="#smartband">Wearable band</a> &middot; <a href="#minirover">Mini rover</a> &middot; <a href="#erc">ERC rover</a> &middot; <a href="#esp32">ESP32</a></div></div><div class="skill"><h3>Power electronics</h3><p class="tools">Buck, boost and LDO selection &middot; battery charging and protection &middot; gate drive and dead-time &middot; gate-drive supply sizing &middot; current sensing &middot; battery pack sizing &middot; efficiency and thermal budgeting</p><div class="shown">Shown in: <a href="#bldc">BLDC</a> &middot; <a href="#minirover">Mini rover</a> &middot; <a href="#gameboy">Handheld</a> &middot; <a href="#erc">ERC rover</a></div></div><div class="skill"><h3>Simulation and analysis</h3><p class="tools">LTspice &middot; MATLAB &middot; Python &middot; double-pulse switching-loss test &middot; measurement data evaluation</p><div class="shown">Shown in: <a href="#dpt">Double pulse test</a> &middot; <a href="#esp32">ESP32</a></div></div><div class="skill"><h3>Embedded and controllers</h3><p class="tools">Hardware designed around ESP32-S3, STM32, Teensy 4.1 and Raspberry Pi CM4 &middot; C and C++ on ESP32 &middot; PWM motor control &middot; interrupts &middot; STM32 pin multiplexing</p><div class="shown">Shown in: <a href="#smartband">Wearable band</a> &middot; <a href="#esp32">ESP32</a> &middot; <a href="#erc">ERC rover</a> &middot; <a href="#minirover">Mini rover</a> &middot; <a href="#thesis">Thesis</a></div></div><div class="skill"><h3>Lab and validation</h3><p class="tools">Oscilloscope and DMM &middot; structured test protocols &middot; board bring-up and fault tracing &middot; written test procedures</p><div class="shown">Shown in: <a href="#esp32">ESP32</a> &middot; <a href="#erc">ERC rover</a></div></div><div class="skill"><h3>Working style</h3><p class="tools">Reads the datasheet first &middot; documents decisions and mistakes &middot; works with mechanical and software teams &middot; writes clear English test records</p><div class="shown">Shown in: <a href="#thesis">Thesis</a> &middot; <a href="#gameboy">Handheld</a></div></div></div>
   <div class="exp reveal"><div class="exp-row"><div class="d">Oct 2024 &ndash; present</div><div><div class="t">M.Eng. Mechatronics &amp; Robotics</div><div class="s">Schmalkalden University of Applied Sciences, Germany. Thesis on a multi-sensor HIL emulation platform.</div></div></div><div class="exp-row"><div class="d">Sep 2025 &ndash; Sep 2026</div><div><div class="t">Lead PCB designer, European Rover Challenge</div><div class="s">HSM-ARIES electrical team. 17th of 124 teams, top German university.</div></div></div><div class="exp-row"><div class="d">Mar &ndash; Jul 2024</div><div><div class="t">PLC wiring &amp; automation intern</div><div class="s">Ark Automation, India. Built and tested 10+ electrical control panels and standardised procedures, cutting assembly time by about 15%.</div></div></div><div class="exp-row"><div class="d">Aug 2019 &ndash; May 2023</div><div><div class="t">B.Eng. Mechanical Engineering</div><div class="s">Savitribai Phule Pune University, India.</div></div></div><div class="exp-row"><div class="d">2026</div><div><div class="t">Altium Global Student Scholarship</div><div class="s">Awarded an Altium Designer licence through the student scholarship program.</div></div></div><div class="exp-row"><div class="d">Languages</div><div><div class="t">English C1 &middot; German A2 &middot; Hindi, Marathi native</div><div class="s">Currently improving German.</div></div></div></div>
 </section>
 
